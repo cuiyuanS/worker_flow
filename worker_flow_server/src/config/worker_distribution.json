@@ -1,0 +1,37 @@
+[
+  {
+    "cla_name": "AIGenModelFlameFFHQ",
+    "t_nun": 1,
+    "job_address": [
+      "10.25.10.132"
+    ]
+  },
+  {
+    "cla_name": "MixEye",
+    "t_nun": 1,
+    "job_address": [
+      "10.25.10.132"
+    ]
+  },
+  {
+    "cla_name": "U3DFlameFFHQ",
+    "t_nun": 1,
+    "job_address": [
+      "10.25.10.132"
+    ]
+  },
+  {
+    "cla_name": "SpeakerConversion",
+    "t_nun": 1,
+    "job_address": [
+      "10.25.10.132"
+    ]
+  },
+  {
+    "cla_name": "VideoStylization",
+    "t_nun": 1,
+    "job_address": [
+      "10.25.10.132"
+    ]
+  }
+]

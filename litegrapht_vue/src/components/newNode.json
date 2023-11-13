@@ -1,0 +1,219 @@
+{
+    "AIGenModelFFHQFlame": {
+        "input": {
+            "required": {
+                "image_data": [
+                    "BS64"
+                ],
+                "sex": [
+                    [
+                        0,
+                        1,
+                        2
+                    ]
+                ]
+            }
+        },
+        "output": [
+            "LOCAL_PATH",
+            "LOCAL_PATH",
+            "LOCAL_PATH",
+            "LOCAL_PATH",
+            "LOCAL_PATH"
+        ],
+        "output_name": [
+            "texture_path",
+            "left_eye_path",
+            "right_eye_path",
+            "obj_file_path",
+            "obj_data_file_path"
+        ],
+        "name": "AIGenModelFFHQFlame",
+        "display_name": "AIGenModelFFHQFlame",
+        "description": "",
+        "category": "worker",
+        "output_node": false
+    },
+    "U3DFlameFFHQ": {
+        "input": {
+            "required": {
+                "ObjData": [
+                    "CDN_PATH"
+                ],
+                "LeftEyeDataPath": [
+                    "CDN_PATH"
+                ],
+                "RightEyeDataPath": [
+                    "CDN_PATH"
+                ],
+                "TexturePath": [
+                    "CDN_PATH"
+                ]
+            }
+        },
+        "output": "LOCAL_PATH",
+        "output_name": "ModelPath",
+        "name": "U3DFlameFFHQ",
+        "display_name": "U3DFlameFFHQ",
+        "description": "",
+        "category": "worker",
+        "output_node": false
+    },
+    "Upload": {
+        "input": {
+            "required": {
+                "local_path": [
+                    "LOCAL_PATH"
+                ]
+            }
+        },
+        "output": [
+            "CDN_PATH"
+        ],
+        "output_name": [
+            "CDN_PATH"
+        ],
+        "name": "Upload",
+        "display_name": "Upload",
+        "description": "",
+        "category": "tool",
+        "output_node": false
+    },
+    "HttpRequestPost": {
+        "input": {
+            "required": {
+                "url": [
+                    "LOCAL_PATH"
+                ],
+                "data": [
+                    "JSON"
+                ],
+                "type": [
+                    "INT"
+                ]
+            }
+        },
+        "output": [
+            "LOCAL_PATH"
+        ],
+        "output_name": [
+            "LOCAL_PATH"
+        ],
+        "name": "HttpRequestPost",
+        "display_name": "HttpRequestPost",
+        "description": "",
+        "category": "tool",
+        "output_node": false
+    },
+    "HttpRequestGet": {
+        "input": {
+            "required": {
+                "url": [
+                    "LOCAL_PATH"
+                ],
+                "data": [
+                    "JSON"
+                ],
+                "type": [
+                    "INT"
+                ]
+            }
+        },
+        "output": [
+            "LOCAL_PATH"
+        ],
+        "output_name": [
+            "LOCAL_PATH"
+        ],
+        "name": "HttpRequestGet",
+        "display_name": "HttpRequestGet",
+        "description": "",
+        "category": "tool",
+        "output_node": false
+    },
+    "CdnConvertBs64": {
+        "input": {
+            "required": {
+                "cdn_path": [
+                    "STRING",
+                    {
+                        "default": "http://10.25.20.15:8021/face_image/202310/12/01HCHV6EBKB236769QT1M68JPM.jpg"
+                    }
+                ]
+            }
+        },
+        "output": [
+            "BS64"
+        ],
+        "output_name": [
+            "BS64"
+        ],
+        "name": "CdnConvertBs64",
+        "display_name": "CdnConvertBs64",
+        "description": "",
+        "category": "tool",
+        "output_node": false
+    },
+    "ModelFFHQFlameOutPut": {
+        "input": {
+            "required": {
+                "texture_path": [
+                    "CDN_PATH"
+                ],
+                "left_eye_path": [
+                    "CDN_PATH"
+                ],
+                "right_eye_path": [
+                    "CDN_PATH"
+                ],
+                "obj_file_path": [
+                    "CDN_PATH"
+                ],
+                "obj_data_file_path": [
+                    "CDN_PATH"
+                ],
+                "ModelPath": [
+                    "CDN_PATH"
+                ]
+            }
+        },
+        "output": "JSON",
+        "output_name": "JSON",
+        "name": "ModelFFHQFlameOutPut",
+        "display_name": "ModelFFHQFlameOutPut",
+        "description": "",
+        "category": "output",
+        "output_node": false
+    },
+    "CustomImageInputNode": {
+        "input": {
+            "required": {
+                "texture_path": [
+                    "CDN_PATH"
+                ],
+                "left_eye_path": [
+                    "CDN_PATH"
+                ],
+                "right_eye_path": [
+                    "CDN_PATH"
+                ],
+                "obj_file_path": [
+                    "CDN_PATH"
+                ],
+                "obj_data_file_path": [
+                    "CDN_PATH"
+                ],
+                "ModelPath": [
+                    "CDN_PATH"
+                ]
+            }
+        },
+        "output": "JSON",
+        "output_name": "JSON",
+        "name": "CustomImageInputNode",
+        "display_name": "CustomImageInputNode",
+        "description": "",
+        "category": "output",
+        "output_node": false
+    }
+}

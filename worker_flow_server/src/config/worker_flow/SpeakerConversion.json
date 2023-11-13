@@ -1,0 +1,58 @@
+{
+  "prompt": {
+    "24": {
+      "class_type": "CdnPath",
+      "inputs": {
+        "cdn_path": "http://10.25.20.15:8021/music/asset/202309/19/01HAPRQTWYT2N8Q4TEPC73EMFG.wav"
+      }
+    },
+    "25": {
+      "class_type": "CdnConvertBytes",
+      "inputs": {
+        "cdn_path": [
+          "24",
+          0
+        ]
+      }
+    },
+    "26": {
+      "class_type": "BytesConvertBs64",
+      "inputs": {
+        "bytes": [
+          "25",
+          0
+        ]
+      }
+    },
+    "40": {
+      "class_type": "SpeakerConversion",
+      "inputs": {
+        "fileb": [
+          "26",
+          0
+        ],
+        "num": "1"
+      }
+    },
+    "41": {
+      "class_type": "UploadBytes",
+      "inputs": {
+        "bytes_data": [
+          "40",
+          0
+        ],
+        "suffix": "wav"
+      }
+    },
+    "42": {
+      "class_type": "SpeakerConversionOutPut",
+      "inputs": {
+        "audio_path": [
+          "41",
+          0
+        ]
+      }
+    }
+  },
+  "extra_data": {}
+}

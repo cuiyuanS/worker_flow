@@ -1,0 +1,16 @@
+[
+  {
+    "cla_name": "AIGenModelFlameFFHQ",
+    "t_nun": 1,
+    "job_address": [
+      "10.25.10.136"
+    ]
+  },
+  {
+    "cla_name": "U3DFlameFFHQ",
+    "t_nun": 2,
+    "job_address": [
+      "10.25.10.136"
+    ]
+  }
+]

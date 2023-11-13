@@ -1,0 +1,11 @@
+[Unit]
+Description = worker_flow
+After = syslog.target
+
+[Service]
+WorkingDirectory=/opt/projects/worker_flow
+Type=forking
+ExecStart=/opt/script/gunicorn/worker_flow.sh
+
+[Install]
+WantedBy=multi-user.target

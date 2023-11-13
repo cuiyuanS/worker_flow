@@ -1,0 +1,90 @@
+{
+  "prompt": {
+    "24": {
+      "class_type": "CdnPath",
+      "inputs": {
+        "cdn_path": "http://10.25.20.15:8021/face_image/202310/12/01HCHV6EBKB236769QT1M68JPM.jpg"
+      }
+    },
+    "25": {
+      "class_type": "CdnConvertBytes",
+      "inputs": {
+        "cdn_path": [
+          "24",
+          0
+        ]
+      }
+    },
+    "26": {
+      "class_type": "BytesConvertBs64",
+      "inputs": {
+        "bytes": [
+          "25",
+          0
+        ]
+      }
+    },
+    "43": {
+      "class_type": "VideoStylization",
+      "inputs": {
+        "bs64": [
+          "26",
+          0
+        ],
+        "style": "2"
+      }
+    },
+    "44": {
+      "class_type": "Bs64ConvertBytes",
+      "inputs": {
+        "bs64": [
+          "43",
+          0
+        ]
+      }
+    },
+    "45": {
+      "class_type": "Bs64ConvertBytes",
+      "inputs": {
+        "bs64": [
+          "43",
+          1
+        ]
+      }
+    },
+    "47": {
+      "class_type": "UploadBytes",
+      "inputs": {
+        "bytes_data": [
+          "44",
+          0
+        ],
+        "suffix": "mp4"
+      }
+    },
+    "48": {
+      "class_type": "UploadBytes",
+      "inputs": {
+        "bytes_data": [
+          "45",
+          0
+        ],
+        "suffix": "mp4"
+      }
+    },
+    "49": {
+      "class_type": "VideoStylizationOutPut",
+      "inputs": {
+        "video_path": [
+          "47",
+          0
+        ],
+        "image_path": [
+          "48",
+          0
+        ]
+      }
+    }
+  },
+  "extra_data": {}
+}

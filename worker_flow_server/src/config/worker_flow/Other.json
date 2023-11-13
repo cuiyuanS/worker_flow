@@ -1,0 +1,1561 @@
+{
+  "prompt": {
+    "24": {
+      "class_type": "CdnPath",
+      "inputs": {
+        "cdn_path": "http://10.25.20.15:8021/face_image/202310/12/01HCHV6EBKB236769QT1M68JPM.jpg"
+      }
+    },
+    "25": {
+      "class_type": "CdnConvertBytes",
+      "inputs": {
+        "cdn_path": [
+          "24",
+          0
+        ]
+      }
+    },
+    "26": {
+      "class_type": "BytesConvertBs64",
+      "inputs": {
+        "bytes": [
+          "25",
+          0
+        ]
+      }
+    },
+    "27": {
+      "class_type": "AIGenModelFFHQFlame",
+      "inputs": {
+        "image_data": [
+          "26",
+          0
+        ],
+        "sex": "2"
+      }
+    },
+    "28": {
+      "class_type": "UploadLocal",
+      "inputs": {
+        "local_path": [
+          "27",
+          0
+        ]
+      }
+    },
+    "29": {
+      "class_type": "MixEye",
+      "inputs": {
+        "texture_path": [
+          "31",
+          0
+        ]
+      }
+    },
+    "31": {
+      "class_type": "CdnConvertBytes",
+      "inputs": {
+        "cdn_path": [
+          "28",
+          0
+        ]
+      }
+    },
+    "32": {
+      "class_type": "UploadBytes",
+      "inputs": {
+        "bytes_data": "mp4",
+        "suffix": "mp4"
+      }
+    },
+    "33": {
+      "class_type": "U3DFlameFFHQ",
+      "inputs": {
+        "ObjData": [
+          "39",
+          0
+        ],
+        "LeftEyeDataPath": [
+          "36",
+          0
+        ],
+        "RightEyeDataPath": [
+          "37",
+          0
+        ],
+        "TexturePath": [
+          "32",
+          0
+        ]
+      }
+    },
+    "34": {
+      "class_type": "ModelFFHQFlameOutPut",
+      "inputs": {
+        "texture_path": [
+          "32",
+          0
+        ],
+        "left_eye_path": [
+          "36",
+          0
+        ],
+        "right_eye_path": [
+          "37",
+          0
+        ],
+        "obj_file_path": [
+          "38",
+          0
+        ],
+        "obj_data_file_path": [
+          "39",
+          0
+        ],
+        "ModelPath": [
+          "35",
+          0
+        ]
+      }
+    },
+    "35": {
+      "class_type": "UploadLocal",
+      "inputs": {
+        "local_path": [
+          "33",
+          0
+        ]
+      }
+    },
+    "36": {
+      "class_type": "UploadLocal",
+      "inputs": {
+        "local_path": [
+          "27",
+          1
+        ]
+      }
+    },
+    "37": {
+      "class_type": "UploadLocal",
+      "inputs": {
+        "local_path": [
+          "27",
+          2
+        ]
+      }
+    },
+    "38": {
+      "class_type": "UploadLocal",
+      "inputs": {
+        "local_path": [
+          "27",
+          3
+        ]
+      }
+    },
+    "39": {
+      "class_type": "UploadLocal",
+      "inputs": {
+        "local_path": [
+          "27",
+          4
+        ]
+      }
+    },
+    "40": {
+      "class_type": "SpeakerConversion",
+      "inputs": {
+        "bs64": [
+          "26",
+          0
+        ],
+        "num": "1"
+      }
+    },
+    "41": {
+      "class_type": "UploadBytes",
+      "inputs": {
+        "bytes_data": "wav",
+        "suffix": "mp4"
+      }
+    },
+    "42": {
+      "class_type": "SpeakerConversionOutPut",
+      "inputs": {
+        "audio_path": [
+          "41",
+          0
+        ]
+      }
+    },
+    "43": {
+      "class_type": "VideoStylization",
+      "inputs": {
+        "bs64": [
+          "26",
+          0
+        ],
+        "style": "2"
+      }
+    },
+    "44": {
+      "class_type": "Bs64ConvertBytes",
+      "inputs": {
+        "bs64": [
+          "43",
+          0
+        ]
+      }
+    },
+    "45": {
+      "class_type": "Bs64ConvertBytes",
+      "inputs": {
+        "bs64": [
+          "43",
+          1
+        ]
+      }
+    },
+    "47": {
+      "class_type": "UploadBytes",
+      "inputs": {
+        "bytes_data": "mp4",
+        "suffix": "mp4"
+      }
+    },
+    "48": {
+      "class_type": "UploadBytes",
+      "inputs": {
+        "bytes_data": "png",
+        "suffix": "mp4"
+      }
+    },
+    "49": {
+      "class_type": "VideoStylizationOutPut",
+      "inputs": {
+        "video_path": [
+          "47",
+          0
+        ],
+        "image_path": [
+          "48",
+          0
+        ]
+      }
+    }
+  },
+  "extra_data": {
+    "last_node_id": 49,
+    "last_link_id": 51,
+    "nodes": [
+      {
+        "id": 29,
+        "type": "worker/MixEye",
+        "pos": [
+          1752.6360152343743,
+          780.2768277343752
+        ],
+        "size": {
+          "0": 211.60000610351562,
+          "1": 26
+        },
+        "flags": {},
+        "order": 18,
+        "mode": 0,
+        "inputs": [
+          {
+            "name": "texture_path",
+            "type": "BYTES",
+            "link": 24
+          }
+        ],
+        "outputs": [
+          {
+            "name": "texture_path",
+            "type": "BYTES",
+            "links": [
+              25
+            ],
+            "slot_index": 0
+          }
+        ],
+        "properties": {
+          "keyName": "texture_path",
+          "name": "MixEye"
+        }
+      },
+      {
+        "id": 31,
+        "type": "tool/CdnConvertBytes",
+        "pos": [
+          1565.6360152343743,
+          782.2768277343752
+        ],
+        "size": {
+          "0": 140,
+          "1": 26
+        },
+        "flags": {},
+        "order": 14,
+        "mode": 0,
+        "inputs": [
+          {
+            "name": "cdn_path",
+            "type": "CDN_PATH",
+            "link": 23
+          }
+        ],
+        "outputs": [
+          {
+            "name": "BYTES",
+            "type": "BYTES",
+            "links": [
+              24
+            ],
+            "slot_index": 0
+          }
+        ],
+        "properties": {
+          "keyName": "cdn_path",
+          "name": "CdnConvertBytes"
+        }
+      },
+      {
+        "id": 32,
+        "type": "tool/UploadBytes",
+        "pos": [
+          2027.6360152343743,
+          773.2768277343752
+        ],
+        "size": {
+          "0": 210,
+          "1": 58
+        },
+        "flags": {},
+        "order": 20,
+        "mode": 0,
+        "inputs": [
+          {
+            "name": "bytes_data",
+            "type": "BYTES",
+            "link": 25
+          }
+        ],
+        "outputs": [
+          {
+            "name": "CDN_PATH",
+            "type": "CDN_PATH",
+            "links": [
+              26,
+              41
+            ],
+            "slot_index": 0
+          }
+        ],
+        "properties": {
+          "inputType": "text",
+          "keyName": "bytes_data",
+          "name": "UploadBytes"
+        },
+        "widgets_values": [
+          "mp4"
+        ]
+      },
+      {
+        "id": 28,
+        "type": "tool/UploadLocal",
+        "pos": [
+          1288,
+          936
+        ],
+        "size": {
+          "0": 161.1999969482422,
+          "1": 26
+        },
+        "flags": {},
+        "order": 6,
+        "mode": 0,
+        "inputs": [
+          {
+            "name": "local_path",
+            "type": "LOCAL_PATH",
+            "link": 22
+          }
+        ],
+        "outputs": [
+          {
+            "name": "CDN_PATH",
+            "type": "CDN_PATH",
+            "links": [
+              23
+            ],
+            "slot_index": 0
+          }
+        ],
+        "properties": {
+          "keyName": "local_path",
+          "name": "UploadLocal"
+        }
+      },
+      {
+        "id": 36,
+        "type": "tool/UploadLocal",
+        "pos": [
+          1283,
+          1041
+        ],
+        "size": {
+          "0": 161.1999969482422,
+          "1": 26
+        },
+        "flags": {},
+        "order": 7,
+        "mode": 0,
+        "inputs": [
+          {
+            "name": "local_path",
+            "type": "LOCAL_PATH",
+            "link": 29
+          }
+        ],
+        "outputs": [
+          {
+            "name": "CDN_PATH",
+            "type": "CDN_PATH",
+            "links": [
+              33,
+              40
+            ],
+            "slot_index": 0
+          }
+        ],
+        "properties": {
+          "keyName": "local_path",
+          "name": "UploadLocal"
+        }
+      },
+      {
+        "id": 37,
+        "type": "tool/UploadLocal",
+        "pos": [
+          1281,
+          1140
+        ],
+        "size": [
+          161.1999969482422,
+          26
+        ],
+        "flags": {},
+        "order": 8,
+        "mode": 0,
+        "inputs": [
+          {
+            "name": "local_path",
+            "type": "LOCAL_PATH",
+            "link": 30
+          }
+        ],
+        "outputs": [
+          {
+            "name": "CDN_PATH",
+            "type": "CDN_PATH",
+            "links": [
+              34,
+              39
+            ],
+            "slot_index": 0
+          }
+        ],
+        "properties": {
+          "keyName": "local_path",
+          "name": "UploadLocal"
+        }
+      },
+      {
+        "id": 38,
+        "type": "tool/UploadLocal",
+        "pos": [
+          1282,
+          1238
+        ],
+        "size": {
+          "0": 161.1999969482422,
+          "1": 26
+        },
+        "flags": {},
+        "order": 9,
+        "mode": 0,
+        "inputs": [
+          {
+            "name": "local_path",
+            "type": "LOCAL_PATH",
+            "link": 31
+          }
+        ],
+        "outputs": [
+          {
+            "name": "CDN_PATH",
+            "type": "CDN_PATH",
+            "links": [
+              38
+            ],
+            "slot_index": 0
+          }
+        ],
+        "properties": {
+          "keyName": "local_path",
+          "name": "UploadLocal"
+        }
+      },
+      {
+        "id": 39,
+        "type": "tool/UploadLocal",
+        "pos": [
+          1279,
+          1347
+        ],
+        "size": {
+          "0": 161.1999969482422,
+          "1": 26
+        },
+        "flags": {},
+        "order": 10,
+        "mode": 0,
+        "inputs": [
+          {
+            "name": "local_path",
+            "type": "LOCAL_PATH",
+            "link": 32
+          }
+        ],
+        "outputs": [
+          {
+            "name": "CDN_PATH",
+            "type": "CDN_PATH",
+            "links": [
+              36,
+              37
+            ],
+            "slot_index": 0
+          }
+        ],
+        "properties": {
+          "keyName": "local_path",
+          "name": "UploadLocal"
+        }
+      },
+      {
+        "id": 33,
+        "type": "worker/U3DFlameFFHQ",
+        "pos": [
+          2362.8914125000033,
+          838.3955201171875
+        ],
+        "size": {
+          "0": 220,
+          "1": 86
+        },
+        "flags": {},
+        "order": 21,
+        "mode": 0,
+        "inputs": [
+          {
+            "name": "ObjData",
+            "type": "CDN_PATH",
+            "link": 36
+          },
+          {
+            "name": "LeftEyeDataPath",
+            "type": "CDN_PATH",
+            "link": 33
+          },
+          {
+            "name": "RightEyeDataPath",
+            "type": "CDN_PATH",
+            "link": 34
+          },
+          {
+            "name": "TexturePath",
+            "type": "CDN_PATH",
+            "link": 26
+          }
+        ],
+        "outputs": [
+          {
+            "name": "ModelPath",
+            "type": "LOCAL_PATH",
+            "links": [
+              27
+            ],
+            "slot_index": 0
+          }
+        ],
+        "properties": {
+          "keyName": "TexturePath",
+          "name": "U3DFlameFFHQ"
+        }
+      },
+      {
+        "id": 35,
+        "type": "tool/UploadLocal",
+        "pos": [
+          2618.8914125000033,
+          825.3955201171875
+        ],
+        "size": [
+          161.1999969482422,
+          74.14023742675772
+        ],
+        "flags": {},
+        "order": 22,
+        "mode": 0,
+        "inputs": [
+          {
+            "name": "local_path",
+            "type": "LOCAL_PATH",
+            "link": 27
+          }
+        ],
+        "outputs": [
+          {
+            "name": "CDN_PATH",
+            "type": "CDN_PATH",
+            "links": [
+              28
+            ],
+            "slot_index": 0
+          }
+        ],
+        "properties": {
+          "keyName": "local_path",
+          "name": "UploadLocal"
+        }
+      },
+      {
+        "id": 41,
+        "type": "tool/UploadBytes",
+        "pos": [
+          1218.4099901953118,
+          1668.558032734375
+        ],
+        "size": {
+          "0": 210,
+          "1": 58
+        },
+        "flags": {},
+        "order": 11,
+        "mode": 0,
+        "inputs": [
+          {
+            "name": "bytes_data",
+            "type": "BYTES",
+            "link": 43
+          }
+        ],
+        "outputs": [
+          {
+            "name": "CDN_PATH",
+            "type": "CDN_PATH",
+            "links": [
+              44
+            ],
+            "slot_index": 0
+          }
+        ],
+        "properties": {
+          "inputType": "text",
+          "keyName": "bytes_data",
+          "name": "UploadBytes"
+        },
+        "widgets_values": [
+          "wav"
+        ]
+      },
+      {
+        "id": 24,
+        "type": "input/CdnPath",
+        "pos": [
+          0.7159878807068338,
+          1217.6760126953125
+        ],
+        "size": [
+          287.05101499462114,
+          72.84907910156198
+        ],
+        "flags": {},
+        "order": 0,
+        "mode": 0,
+        "outputs": [
+          {
+            "name": "CDN_PATH",
+            "type": "CDN_PATH",
+            "links": [
+              19
+            ],
+            "slot_index": 0
+          }
+        ],
+        "properties": {
+          "inputType": "text",
+          "keyName": "cdn_path",
+          "name": "CdnPath"
+        },
+        "widgets_values": [
+          "http://10.25.20.15:8021/face_image/202310/12/01HCHV6EBKB236769QT1M68JPM.jpg"
+        ]
+      },
+      {
+        "id": 25,
+        "type": "tool/CdnConvertBytes",
+        "pos": [
+          332,
+          1221
+        ],
+        "size": [
+          157.23701499462106,
+          34.6090791015622
+        ],
+        "flags": {},
+        "order": 1,
+        "mode": 0,
+        "inputs": [
+          {
+            "name": "cdn_path",
+            "type": "CDN_PATH",
+            "link": 19
+          }
+        ],
+        "outputs": [
+          {
+            "name": "BYTES",
+            "type": "BYTES",
+            "links": [
+              20
+            ],
+            "slot_index": 0
+          }
+        ],
+        "properties": {
+          "keyName": "cdn_path",
+          "name": "CdnConvertBytes"
+        }
+      },
+      {
+        "id": 27,
+        "type": "worker/AIGenModelFFHQFlame",
+        "pos": [
+          893,
+          1083
+        ],
+        "size": {
+          "0": 245.1999969482422,
+          "1": 138
+        },
+        "flags": {},
+        "order": 3,
+        "mode": 0,
+        "inputs": [
+          {
+            "name": "image_data",
+            "type": "BS64",
+            "link": 21
+          }
+        ],
+        "outputs": [
+          {
+            "name": "texture_path",
+            "type": "LOCAL_PATH",
+            "links": [
+              22
+            ],
+            "slot_index": 0
+          },
+          {
+            "name": "left_eye_path",
+            "type": "LOCAL_PATH",
+            "links": [
+              29
+            ],
+            "slot_index": 1
+          },
+          {
+            "name": "right_eye_path",
+            "type": "LOCAL_PATH",
+            "links": [
+              30
+            ],
+            "slot_index": 2
+          },
+          {
+            "name": "obj_file_path",
+            "type": "LOCAL_PATH",
+            "links": [
+              31
+            ],
+            "slot_index": 3
+          },
+          {
+            "name": "obj_data_file_path",
+            "type": "LOCAL_PATH",
+            "links": [
+              32
+            ],
+            "slot_index": 4
+          }
+        ],
+        "properties": {
+          "value": "2",
+          "values": "0;1;2",
+          "inputType": "combo",
+          "keyName": "sex",
+          "name": "AIGenModelFFHQFlame"
+        },
+        "widgets_values": [
+          "2"
+        ]
+      },
+      {
+        "id": 42,
+        "type": "output/SpeakerConversionOutPut",
+        "pos": [
+          2989.6460980468737,
+          1603.0617058593734
+        ],
+        "size": [
+          257.8915689355463,
+          49.88345978515599
+        ],
+        "flags": {},
+        "order": 15,
+        "mode": 0,
+        "inputs": [
+          {
+            "name": "audio_path",
+            "type": "CDN_PATH",
+            "link": 44
+          }
+        ],
+        "outputs": [
+          {
+            "name": "JSON",
+            "type": "JSON",
+            "links": null,
+            "slot_index": 0
+          }
+        ],
+        "properties": {
+          "keyName": "audio_path",
+          "name": "SpeakerConversionOutPut"
+        }
+      },
+      {
+        "id": 34,
+        "type": "output/ModelFFHQFlameOutPut",
+        "pos": [
+          2984.6460980468737,
+          1213.0617058593734
+        ],
+        "size": [
+          252.73391893554617,
+          159.49861978515628
+        ],
+        "flags": {},
+        "order": 23,
+        "mode": 0,
+        "inputs": [
+          {
+            "name": "texture_path",
+            "type": "CDN_PATH",
+            "link": 41
+          },
+          {
+            "name": "left_eye_path",
+            "type": "CDN_PATH",
+            "link": 40
+          },
+          {
+            "name": "right_eye_path",
+            "type": "CDN_PATH",
+            "link": 39
+          },
+          {
+            "name": "obj_file_path",
+            "type": "CDN_PATH",
+            "link": 38
+          },
+          {
+            "name": "obj_data_file_path",
+            "type": "CDN_PATH",
+            "link": 37
+          },
+          {
+            "name": "ModelPath",
+            "type": "CDN_PATH",
+            "link": 28
+          }
+        ],
+        "outputs": [
+          {
+            "name": "JSON",
+            "type": "JSON",
+            "links": null
+          }
+        ],
+        "properties": {
+          "keyName": "ModelPath",
+          "name": "ModelFFHQFlameOutPut"
+        }
+      },
+      {
+        "id": 40,
+        "type": "worker/SpeakerConversion",
+        "pos": [
+          928.409990195312,
+          1665.558032734375
+        ],
+        "size": {
+          "0": 210,
+          "1": 58
+        },
+        "flags": {},
+        "order": 4,
+        "mode": 0,
+        "inputs": [
+          {
+            "name": "bs64",
+            "type": "BS64",
+            "link": 42
+          }
+        ],
+        "outputs": [
+          {
+            "name": "audio_path",
+            "type": "BYTES",
+            "links": [
+              43
+            ],
+            "slot_index": 0
+          }
+        ],
+        "properties": {
+          "inputType": "text",
+          "keyName": "num",
+          "name": "SpeakerConversion"
+        },
+        "widgets_values": [
+          "1"
+        ]
+      },
+      {
+        "id": 26,
+        "type": "tool/BytesConvertBs64",
+        "pos": [
+          555,
+          1221
+        ],
+        "size": [
+          161.8590149946209,
+          34.96107910156206
+        ],
+        "flags": {},
+        "order": 2,
+        "mode": 0,
+        "inputs": [
+          {
+            "name": "bytes",
+            "type": "BYTES",
+            "link": 20
+          }
+        ],
+        "outputs": [
+          {
+            "name": "BS64",
+            "type": "BS64",
+            "links": [
+              21,
+              42,
+              45
+            ],
+            "slot_index": 0
+          }
+        ],
+        "properties": {
+          "keyName": "bytes",
+          "name": "BytesConvertBs64"
+        }
+      },
+      {
+        "id": 44,
+        "type": "tool/Bs64ConvertBytes",
+        "pos": [
+          1155,
+          1899
+        ],
+        "size": [
+          199.05005429687412,
+          42.60685327148349
+        ],
+        "flags": {},
+        "order": 12,
+        "mode": 0,
+        "inputs": [
+          {
+            "name": "bs64",
+            "type": "BS64",
+            "link": 46
+          }
+        ],
+        "outputs": [
+          {
+            "name": "BYTES",
+            "type": "BYTES",
+            "links": [
+              48
+            ],
+            "slot_index": 0
+          }
+        ],
+        "properties": {
+          "keyName": "bs64",
+          "name": "Bs64ConvertBytes"
+        }
+      },
+      {
+        "id": 45,
+        "type": "tool/Bs64ConvertBytes",
+        "pos": [
+          1158,
+          2025
+        ],
+        "size": {
+          "0": 199.050048828125,
+          "1": 42.60685348510742
+        },
+        "flags": {},
+        "order": 13,
+        "mode": 0,
+        "inputs": [
+          {
+            "name": "bs64",
+            "type": "BS64",
+            "link": 47
+          }
+        ],
+        "outputs": [
+          {
+            "name": "BYTES",
+            "type": "BYTES",
+            "links": [
+              49
+            ],
+            "slot_index": 0
+          }
+        ],
+        "properties": {
+          "keyName": "bs64",
+          "name": "Bs64ConvertBytes"
+        }
+      },
+      {
+        "id": 43,
+        "type": "worker/VideoStylization",
+        "pos": [
+          880,
+          1963
+        ],
+        "size": {
+          "0": 210,
+          "1": 78
+        },
+        "flags": {},
+        "order": 5,
+        "mode": 0,
+        "inputs": [
+          {
+            "name": "bs64",
+            "type": "BS64",
+            "link": 45
+          }
+        ],
+        "outputs": [
+          {
+            "name": "data",
+            "type": "BS64",
+            "links": [
+              46
+            ],
+            "slot_index": 0
+          },
+          {
+            "name": "first_image",
+            "type": "BS64",
+            "links": [
+              47
+            ],
+            "slot_index": 1
+          }
+        ],
+        "properties": {
+          "inputType": "text",
+          "keyName": "style",
+          "name": "VideoStylization"
+        },
+        "widgets_values": [
+          "2"
+        ]
+      },
+      {
+        "id": 48,
+        "type": "tool/UploadBytes",
+        "pos": [
+          1458,
+          2054
+        ],
+        "size": {
+          "0": 210,
+          "1": 58
+        },
+        "flags": {},
+        "order": 17,
+        "mode": 0,
+        "inputs": [
+          {
+            "name": "bytes_data",
+            "type": "BYTES",
+            "link": 49
+          }
+        ],
+        "outputs": [
+          {
+            "name": "CDN_PATH",
+            "type": "CDN_PATH",
+            "links": [
+              51
+            ],
+            "slot_index": 0
+          }
+        ],
+        "properties": {
+          "inputType": "text",
+          "keyName": "bytes_data",
+          "name": "UploadBytes"
+        },
+        "widgets_values": [
+          "png"
+        ]
+      },
+      {
+        "id": 47,
+        "type": "tool/UploadBytes",
+        "pos": [
+          1454,
+          1911
+        ],
+        "size": {
+          "0": 210,
+          "1": 58
+        },
+        "flags": {},
+        "order": 16,
+        "mode": 0,
+        "inputs": [
+          {
+            "name": "bytes_data",
+            "type": "BYTES",
+            "link": 48
+          }
+        ],
+        "outputs": [
+          {
+            "name": "CDN_PATH",
+            "type": "CDN_PATH",
+            "links": [
+              50
+            ],
+            "slot_index": 0
+          }
+        ],
+        "properties": {
+          "inputType": "text",
+          "keyName": "bytes_data",
+          "name": "UploadBytes"
+        },
+        "widgets_values": [
+          "mp4"
+        ]
+      },
+      {
+        "id": 49,
+        "type": "output/VideoStylizationOutPut",
+        "pos": [
+          2997,
+          1760
+        ],
+        "size": [
+          279.23645429687303,
+          75.66095327148355
+        ],
+        "flags": {},
+        "order": 19,
+        "mode": 0,
+        "inputs": [
+          {
+            "name": "video_path",
+            "type": "CDN_PATH",
+            "link": 50
+          },
+          {
+            "name": "image_path",
+            "type": "CDN_PATH",
+            "link": 51
+          }
+        ],
+        "outputs": [
+          {
+            "name": "JSON",
+            "type": "JSON",
+            "links": null
+          }
+        ],
+        "properties": {
+          "keyName": "image_path",
+          "name": "VideoStylizationOutPut"
+        }
+      }
+    ],
+    "links": [
+      [
+        19,
+        24,
+        0,
+        25,
+        0,
+        "CDN_PATH"
+      ],
+      [
+        20,
+        25,
+        0,
+        26,
+        0,
+        "BYTES"
+      ],
+      [
+        21,
+        26,
+        0,
+        27,
+        0,
+        "BS64"
+      ],
+      [
+        22,
+        27,
+        0,
+        28,
+        0,
+        "LOCAL_PATH"
+      ],
+      [
+        23,
+        28,
+        0,
+        31,
+        0,
+        "CDN_PATH"
+      ],
+      [
+        24,
+        31,
+        0,
+        29,
+        0,
+        "BYTES"
+      ],
+      [
+        25,
+        29,
+        0,
+        32,
+        0,
+        "BYTES"
+      ],
+      [
+        26,
+        32,
+        0,
+        33,
+        3,
+        "CDN_PATH"
+      ],
+      [
+        27,
+        33,
+        0,
+        35,
+        0,
+        "LOCAL_PATH"
+      ],
+      [
+        28,
+        35,
+        0,
+        34,
+        5,
+        "CDN_PATH"
+      ],
+      [
+        29,
+        27,
+        1,
+        36,
+        0,
+        "LOCAL_PATH"
+      ],
+      [
+        30,
+        27,
+        2,
+        37,
+        0,
+        "LOCAL_PATH"
+      ],
+      [
+        31,
+        27,
+        3,
+        38,
+        0,
+        "LOCAL_PATH"
+      ],
+      [
+        32,
+        27,
+        4,
+        39,
+        0,
+        "LOCAL_PATH"
+      ],
+      [
+        33,
+        36,
+        0,
+        33,
+        1,
+        "CDN_PATH"
+      ],
+      [
+        34,
+        37,
+        0,
+        33,
+        2,
+        "CDN_PATH"
+      ],
+      [
+        36,
+        39,
+        0,
+        33,
+        0,
+        "CDN_PATH"
+      ],
+      [
+        37,
+        39,
+        0,
+        34,
+        4,
+        "CDN_PATH"
+      ],
+      [
+        38,
+        38,
+        0,
+        34,
+        3,
+        "CDN_PATH"
+      ],
+      [
+        39,
+        37,
+        0,
+        34,
+        2,
+        "CDN_PATH"
+      ],
+      [
+        40,
+        36,
+        0,
+        34,
+        1,
+        "CDN_PATH"
+      ],
+      [
+        41,
+        32,
+        0,
+        34,
+        0,
+        "CDN_PATH"
+      ],
+      [
+        42,
+        26,
+        0,
+        40,
+        0,
+        "BS64"
+      ],
+      [
+        43,
+        40,
+        0,
+        41,
+        0,
+        "BYTES"
+      ],
+      [
+        44,
+        41,
+        0,
+        42,
+        0,
+        "CDN_PATH"
+      ],
+      [
+        45,
+        26,
+        0,
+        43,
+        0,
+        "BS64"
+      ],
+      [
+        46,
+        43,
+        0,
+        44,
+        0,
+        "BS64"
+      ],
+      [
+        47,
+        43,
+        1,
+        45,
+        0,
+        "BS64"
+      ],
+      [
+        48,
+        44,
+        0,
+        47,
+        0,
+        "BYTES"
+      ],
+      [
+        49,
+        45,
+        0,
+        48,
+        0,
+        "BYTES"
+      ],
+      [
+        50,
+        47,
+        0,
+        49,
+        0,
+        "CDN_PATH"
+      ],
+      [
+        51,
+        48,
+        0,
+        49,
+        1,
+        "CDN_PATH"
+      ]
+    ],
+    "groups": [
+      {
+        "title": "MixEye",
+        "bounding": [
+          1536,
+          668,
+          718,
+          224
+        ],
+        "color": "#A88"
+      },
+      {
+        "title": "AIGenModel",
+        "bounding": [
+          862,
+          866,
+          621,
+          569
+        ],
+        "color": "#A88"
+      },
+      {
+        "title": "Unity3D",
+        "bounding": [
+          2337,
+          761,
+          460,
+          204
+        ],
+        "color": "#A88"
+      },
+      {
+        "title": "输入",
+        "bounding": [
+          -34,
+          1136,
+          820,
+          231
+        ],
+        "color": "#8A8"
+      },
+      {
+        "title": "Speaker",
+        "bounding": [
+          857,
+          1609,
+          618,
+          159
+        ],
+        "color": "#A88"
+      },
+      {
+        "title": "输出",
+        "bounding": [
+          2938,
+          1052,
+          400,
+          818
+        ],
+        "color": "#88A"
+      },
+      {
+        "title": "Group",
+        "bounding": [
+          853,
+          1852,
+          924,
+          332
+        ],
+        "color": "#A88"
+      }
+    ],
+    "config": {},
+    "extra": {},
+    "version": 0.4
+  }
+}

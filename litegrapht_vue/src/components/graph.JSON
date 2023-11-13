@@ -1,0 +1,564 @@
+{
+    "last_node_id": 23,
+    "last_link_id": 18,
+    "nodes": [
+        {
+            "id": 14,
+            "type": "worker/AIGenModelFFHQFlame",
+            "pos": [
+                831,
+                388
+            ],
+            "size": {
+                "0": 245.1999969482422,
+                "1": 138
+            },
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "image_data",
+                    "type": "BS64",
+                    "link": 2
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "texture_path",
+                    "type": "LOCAL_PATH",
+                    "links": [
+                        3
+                    ],
+                    "slot_index": 0
+                },
+                {
+                    "name": "left_eye_path",
+                    "type": "LOCAL_PATH",
+                    "links": [
+                        4
+                    ],
+                    "slot_index": 1
+                },
+                {
+                    "name": "right_eye_path",
+                    "type": "LOCAL_PATH",
+                    "links": [
+                        5
+                    ],
+                    "slot_index": 2
+                },
+                {
+                    "name": "obj_file_path",
+                    "type": "LOCAL_PATH",
+                    "links": [
+                        6
+                    ],
+                    "slot_index": 3
+                },
+                {
+                    "name": "obj_data_file_path",
+                    "type": "LOCAL_PATH",
+                    "links": [
+                        7
+                    ],
+                    "slot_index": 4
+                }
+            ],
+            "properties": {
+                "value": 0,
+                "values": "0;1;2"
+            },
+            "widgets_values": [
+                0
+            ]
+        },
+        {
+            "id": 15,
+            "type": "tool/Upload",
+            "pos": [
+                1226,
+                328
+            ],
+            "size": {
+                "0": 161.1999969482422,
+                "1": 26
+            },
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "local_path",
+                    "type": "LOCAL_PATH",
+                    "link": 3
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "CDN_PATH",
+                    "type": "CDN_PATH",
+                    "links": [
+                        8,
+                        13
+                    ],
+                    "slot_index": 0
+                }
+            ],
+            "properties": {}
+        },
+        {
+            "id": 23,
+            "type": "output/ModelFFHQFlameOutPut",
+            "pos": [
+                2026,
+                305
+            ],
+            "size": {
+                "0": 194.8000030517578,
+                "1": 126
+            },
+            "flags": {},
+            "order": 9,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "texture_path",
+                    "type": "CDN_PATH",
+                    "link": 13
+                },
+                {
+                    "name": "left_eye_path",
+                    "type": "CDN_PATH",
+                    "link": 14
+                },
+                {
+                    "name": "right_eye_path",
+                    "type": "CDN_PATH",
+                    "link": 15
+                },
+                {
+                    "name": "obj_file_path",
+                    "type": "CDN_PATH",
+                    "link": 16
+                },
+                {
+                    "name": "obj_data_file_path",
+                    "type": "CDN_PATH",
+                    "link": 17
+                },
+                {
+                    "name": "ModelPath",
+                    "type": "CDN_PATH",
+                    "link": 18
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "JSON",
+                    "type": "JSON",
+                    "links": null
+                }
+            ],
+            "properties": {}
+        },
+        {
+            "id": 16,
+            "type": "tool/Upload",
+            "pos": [
+                1221,
+                416
+            ],
+            "size": {
+                "0": 161.1999969482422,
+                "1": 26
+            },
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "local_path",
+                    "type": "LOCAL_PATH",
+                    "link": 4
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "CDN_PATH",
+                    "type": "CDN_PATH",
+                    "links": [
+                        9,
+                        14
+                    ],
+                    "slot_index": 0
+                }
+            ],
+            "properties": {}
+        },
+        {
+            "id": 17,
+            "type": "tool/Upload",
+            "pos": [
+                1220,
+                506
+            ],
+            "size": {
+                "0": 161.1999969482422,
+                "1": 26
+            },
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "local_path",
+                    "type": "LOCAL_PATH",
+                    "link": 5
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "CDN_PATH",
+                    "type": "CDN_PATH",
+                    "links": [
+                        10,
+                        15
+                    ],
+                    "slot_index": 0
+                }
+            ],
+            "properties": {}
+        },
+        {
+            "id": 18,
+            "type": "tool/Upload",
+            "pos": [
+                1218,
+                597
+            ],
+            "size": {
+                "0": 161.1999969482422,
+                "1": 26
+            },
+            "flags": {},
+            "order": 5,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "local_path",
+                    "type": "LOCAL_PATH",
+                    "link": 6
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "CDN_PATH",
+                    "type": "CDN_PATH",
+                    "links": [
+                        16
+                    ],
+                    "slot_index": 0
+                }
+            ],
+            "properties": {}
+        },
+        {
+            "id": 19,
+            "type": "tool/Upload",
+            "pos": [
+                1218,
+                694
+            ],
+            "size": {
+                "0": 161.1999969482422,
+                "1": 26
+            },
+            "flags": {},
+            "order": 6,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "local_path",
+                    "type": "LOCAL_PATH",
+                    "link": 7
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "CDN_PATH",
+                    "type": "CDN_PATH",
+                    "links": [
+                        11,
+                        17
+                    ],
+                    "slot_index": 0
+                }
+            ],
+            "properties": {}
+        },
+        {
+            "id": 21,
+            "type": "worker/U3DFlameFFHQ",
+            "pos": [
+                1534,
+                117
+            ],
+            "size": {
+                "0": 220,
+                "1": 86
+            },
+            "flags": {},
+            "order": 7,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "ObjData",
+                    "type": "CDN_PATH",
+                    "link": 11
+                },
+                {
+                    "name": "LeftEyeDataPath",
+                    "type": "CDN_PATH",
+                    "link": 9
+                },
+                {
+                    "name": "RightEyeDataPath",
+                    "type": "CDN_PATH",
+                    "link": 10
+                },
+                {
+                    "name": "TexturePath",
+                    "type": "CDN_PATH",
+                    "link": 8
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "ModelPath",
+                    "type": "LOCAL_PATH",
+                    "links": [
+                        12
+                    ],
+                    "slot_index": 0
+                }
+            ],
+            "properties": {}
+        },
+        {
+            "id": 22,
+            "type": "tool/Upload",
+            "pos": [
+                1791,
+                192
+            ],
+            "size": {
+                "0": 161.1999969482422,
+                "1": 26
+            },
+            "flags": {},
+            "order": 8,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "local_path",
+                    "type": "LOCAL_PATH",
+                    "link": 12
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "CDN_PATH",
+                    "type": "CDN_PATH",
+                    "links": [
+                        18
+                    ],
+                    "slot_index": 0
+                }
+            ],
+            "properties": {}
+        },
+        {
+            "id": 13,
+            "type": "tool/CdnConvertBs64",
+            "pos": [
+                316,
+                612
+            ],
+            "size": {
+                "0": 210,
+                "1": 58
+            },
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "outputs": [
+                {
+                    "name": "BS64",
+                    "type": "BS64",
+                    "links": [
+                        2
+                    ],
+                    "slot_index": 0
+                }
+            ],
+            "properties": {},
+            "widgets_values": [
+                "http://10.25.20.15:8021/face_image/202310/12/01HCHV6EBKB236769QT1M68JPM.jpg"
+            ]
+        }
+    ],
+    "links": [
+        [
+            2,
+            13,
+            0,
+            14,
+            0,
+            "BS64"
+        ],
+        [
+            3,
+            14,
+            0,
+            15,
+            0,
+            "LOCAL_PATH"
+        ],
+        [
+            4,
+            14,
+            1,
+            16,
+            0,
+            "LOCAL_PATH"
+        ],
+        [
+            5,
+            14,
+            2,
+            17,
+            0,
+            "LOCAL_PATH"
+        ],
+        [
+            6,
+            14,
+            3,
+            18,
+            0,
+            "LOCAL_PATH"
+        ],
+        [
+            7,
+            14,
+            4,
+            19,
+            0,
+            "LOCAL_PATH"
+        ],
+        [
+            8,
+            15,
+            0,
+            21,
+            3,
+            "CDN_PATH"
+        ],
+        [
+            9,
+            16,
+            0,
+            21,
+            1,
+            "CDN_PATH"
+        ],
+        [
+            10,
+            17,
+            0,
+            21,
+            2,
+            "CDN_PATH"
+        ],
+        [
+            11,
+            19,
+            0,
+            21,
+            0,
+            "CDN_PATH"
+        ],
+        [
+            12,
+            21,
+            0,
+            22,
+            0,
+            "LOCAL_PATH"
+        ],
+        [
+            13,
+            15,
+            0,
+            23,
+            0,
+            "CDN_PATH"
+        ],
+        [
+            14,
+            16,
+            0,
+            23,
+            1,
+            "CDN_PATH"
+        ],
+        [
+            15,
+            17,
+            0,
+            23,
+            2,
+            "CDN_PATH"
+        ],
+        [
+            16,
+            18,
+            0,
+            23,
+            3,
+            "CDN_PATH"
+        ],
+        [
+            17,
+            19,
+            0,
+            23,
+            4,
+            "CDN_PATH"
+        ],
+        [
+            18,
+            22,
+            0,
+            23,
+            5,
+            "CDN_PATH"
+        ]
+    ],
+    "groups": [
+        {
+            "title": "Group",
+            "bounding": [
+                1146,
+                264,
+                287,
+                486
+            ],
+            "color": "#3f789e"
+        }
+    ],
+    "config": {},
+    "extra": {},
+    "version": 0.4
+}
